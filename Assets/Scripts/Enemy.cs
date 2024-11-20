@@ -2,17 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public abstract class Enemy : Character
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private int damage;
+    public int Damage
     {
-        
+        get
+        {
+            return damage;
+        }
+        set
+        {
+            damage = value;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public abstract void Attack(Character character);
 }

@@ -1,10 +1,37 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-	// ���¡��á��ⴴ
-	public bool Jump;
+    public Rigidbody2D rb2d;
+    Vector2 move;
+    float moveX;
+    [SerializeField] float speed;
+    [SerializeField] float jumpSpeed;
+
+    void Start()
+    {
+        speed = 500f;
+        jumpSpeed = 15f;
+    }
+
+    void Update()
+    {
+        moveX = Input.GetAxisRaw("Horizontal");
+        rb2d.velocity = new Vector2(moveX * speed * Time.fixedDeltaTime, rb2d.velocity.y);
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            rb2d.velocity = new Vector2(0, jumpSpeed);
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        //rb2d.velocity = new Vector2(moveX * speed * Time.fixedDeltaTime, rb2d.velocity.y);
+    }
+    // àÃÕÂ¡¡ÒÃ¡ÃÐâ´´
+    /*public bool Jump;
 
 	private void Start()
 	{
@@ -23,5 +50,5 @@ public class PlayerController : MonoBehaviour
 			GetComponent<Rigidbody2D>().velocity = new Vector2(0, 6f);
 			Jump = false;
 		}
-	}
+	}*/
 }
