@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5337159812193523029}
   - component: {fileID: 6512734290177643756}
   - component: {fileID: -2354656380868196213}
-  - component: {fileID: -7680118198754816630}
+  - component: {fileID: 3617726934078845146}
   m_Layer: 0
   m_Name: Rhino
   m_TagString: Untagged
@@ -211,7 +211,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &-7680118198754816630
+--- !u!114 &3617726934078845146
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -220,7 +220,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5084170432263895878}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2399395d4e00004f9b644e00a0771f5, type: 3}
+  m_Script: {fileID: 11500000, guid: 7a47e0712bfda4f4cb479f35f4e5e343, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spikeGenerator: {fileID: 0}
+  moveSpeed: 5
