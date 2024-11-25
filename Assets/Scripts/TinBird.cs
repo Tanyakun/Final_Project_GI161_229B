@@ -4,12 +4,7 @@ using UnityEngine;
 
 public class TinBird : Enemy
 {
-    void Start()
-    {
-        Speed = 3f;
-        Move();
-    }
-
+    // Override Method พฤติกรรมเฉพาะตัวของนกผอม
     protected override void Move()
     {
         transform.position = new Vector2(
@@ -18,6 +13,7 @@ public class TinBird : Enemy
         );
     }
 
+    // Override Method แสดงข้อความตอนผู้เล่นชนกับนกผอม
     protected override void OnCollideWithPlayer()
     {
         Debug.Log("Player hit by TinBird! Game Over.");

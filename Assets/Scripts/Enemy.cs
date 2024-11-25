@@ -12,15 +12,23 @@ public abstract class Enemy : MonoBehaviour
         set { speed = Mathf.Clamp(value, 1f, 10f); } // จำกัดค่า speed ไม่ให้เกิน 10
     }
 
-    public float moveSpeed = 5f; // ความเร็วของศัตรู
-    void Update()
+    protected virtual void Start()
     {
-        // เคลื่อนที่ไปทางซ้ายตลอดเวลา
-        transform.position += Vector3.left * moveSpeed * Time.deltaTime;
+        // ความเร็วของศัตรู
+        Speed = Random.Range(4f, 8f);
     }
 
-    // Move จะให้คลาสลูก Override
-    protected abstract void Move();
+    protected virtual void Update()
+    {
+        Move();
+    }
+
+    // พฤติกรรมให้คลาสลูกเลือกว่าจะ Override หรือไม่
+    protected virtual void Move()
+    {
+        // เคลื่อนที่ไปทางซ้ายตลอดเวลา
+        transform.position += Vector3.left * Speed * Time.deltaTime;
+    }
 
     // พฤติกรรมชนกับผู้เล่น
     protected abstract void OnCollideWithPlayer();
@@ -32,6 +40,7 @@ public abstract class Enemy : MonoBehaviour
             OnCollideWithPlayer();
         }
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Finish"))

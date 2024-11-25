@@ -30,25 +30,4 @@ public class PlayerController : MonoBehaviour
     {
         //rb2d.velocity = new Vector2(moveX * speed * Time.fixedDeltaTime, rb2d.velocity.y);
     }
-    // àÃÕÂ¡¡ÒÃ¡ÃÐâ´´
-    /*public bool Jump;
-
-	private void Start()
-	{
-		
-	}
-
-	private void Update()
-	{
-		RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 0.1f);
-		if(hit.collider != null )
-		{
-			Jump = false;
-		}
-		if(Input.GetKeyDown(KeyCode.Space) && Jump == false)
-		{
-			GetComponent<Rigidbody2D>().velocity = new Vector2(0, 6f);
-			Jump = false;
-		}
-	}*/
 }

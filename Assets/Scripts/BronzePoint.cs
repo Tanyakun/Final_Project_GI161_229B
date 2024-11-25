@@ -1,10 +1,10 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class BronzePoint : GetCoin
 {
-    public int coinIncrease;
+    public int coinIncrease; // ค่าเหรียญ
 
     void Start()
     {
