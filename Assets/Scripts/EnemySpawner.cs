@@ -19,7 +19,6 @@ public class EnemySpawner : MonoBehaviour
         // เลือกศัตรูแบบสุ่ม
         int randomIndex = Random.Range(0, enemyPrefabs.Length);
         Enemy enemy = Instantiate(enemyPrefabs[randomIndex]);
-        //enemy.Speed = Random.Range(3f, 8f); // Polymorphism: ตั้งค่าความเร็วแบบไดนามิก
                                             
         // กำหนดตำแหน่งให้ศัตรูอยู่บนพื้น
         float spawnX = transform.position.x;
